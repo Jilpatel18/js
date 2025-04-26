@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quotes Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #quote {
+            font-size: 28px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            color: #fff;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quote">Click the button to generate a random quote!</div>
+    <button id="generate-quote">Generate Quote</button>
+    <script >
+        const quotes = [
+    "The only way to do great work is to love what you do. - Steve Jobs",
+    "Life is what happens when you're busy making other plans. - John Lennon",
+    "Get busy living or get busy dying. - Stephen King",
+    "You have within you right now, everything you need to deal with whatever the world can throw at you. - Brian Tracy",
+    "Believe you can and you're halfway there. - Theodore Roosevelt",
+    "The purpose of our lives is to be happy. - Dalai Lama",
+    "Life is really simple, but we insist on making it complicated. - Confucius",
+    "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+    "In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King Jr.",
+    "The best way to predict the future is to create it. - Peter Drucker"
+];
+
+function getRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+}
+
+document.getElementById('generate-quote').addEventListener('click', function() {
+    const quote = getRandomQuote();
+    document.getElementById('quote').textContent = quote;
+});
+    </script>
+
+</body>
+</html>
