@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="new.css"> -->
+    <style>
+        body {
+            background-color: #1e1e2f;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center; /* Center text horizontally */
+        }
+
+        #clock {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #date {
+            font-size: 2rem;
+            color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digital Clock</h1>
+    <p id="clock"></p>
+    <p id="date"></p>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            const clock = document.getElementById( "clock");
+            clock.innerHTML =  `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        function updateDate() {
+            const now = new Date();
+            const day = now.getDate();
+            const month = (now.getMonth() + 1);
+            const year = now.getFullYear();
+
+            const date = document.getElementById( "date");
+            date.innerHTML =  `${day}/${month}/${year}`;
+        }
+        setInterval(updateDate, 1000);
+    </script> 
+</body>
+</html>
